@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>队列 | 小可爱的博客</title>
+  <title>数组 | 小可爱的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="队列">
+  <meta name="description" content="什么是数组？数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。 线性表:就是数据排成一条线的结构 随机访问？因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。 数组如何实现随机访问性？计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:a[i]_address = base_a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="队列">
-<meta property="og:url" content="http://yoursite.com/2018/11/21/队列/index.html">
+<meta property="og:title" content="数组">
+<meta property="og:url" content="http://yoursite.com/2018/11/21/数组/index.html">
 <meta property="og:site_name" content="小可爱的博客">
-<meta property="og:description" content="队列">
+<meta property="og:description" content="什么是数组？数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。 线性表:就是数据排成一条线的结构 随机访问？因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。 数组如何实现随机访问性？计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:a[i]_address = base_a">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:image" content="https://i.imgur.com/Hr4AR4L.png">
-<meta property="og:updated_time" content="2018-11-21T11:43:22.216Z">
+<meta property="og:updated_time" content="2018-11-21T13:45:41.636Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="队列">
-<meta name="twitter:description" content="队列">
-<meta name="twitter:image" content="https://i.imgur.com/Hr4AR4L.png">
+<meta name="twitter:title" content="数组">
+<meta name="twitter:description" content="什么是数组？数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。 线性表:就是数据排成一条线的结构 随机访问？因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。 数组如何实现随机访问性？计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:a[i]_address = base_a">
   
     <link rel="alternative" href="/atom.xml" title="小可爱的博客" type="application/atom+xml">
   
@@ -60,8 +58,6 @@
 			<ul>
 			
 				<li><a href="/">主页</a></li>
-	        
-				<li><a href="/tags/随笔/">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -117,8 +113,6 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
@@ -139,9 +133,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -156,19 +148,19 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-队列" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-数组" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      队列
+      数组
     </h1>
   
 
         
-        <a href="/2018/11/21/队列/" class="archive-article-date">
+        <a href="/2018/11/21/数组/" class="archive-article-date">
   	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
 </a>
         
@@ -176,61 +168,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><img src="https://i.imgur.com/Hr4AR4L.png" alt=""><br><a id="more"></a></p>
-<h4 id="队列定义：一种可以实现“先进先出”的存储结构"><a href="#队列定义：一种可以实现“先进先出”的存储结构" class="headerlink" title="队列定义：一种可以实现“先进先出”的存储结构"></a>队列定义：一种可以实现“先进先出”的存储结构</h4><h4 id="队列分类"><a href="#队列分类" class="headerlink" title="队列分类"></a>队列分类</h4><ul>
-<li>链式队列<ul>
-<li>使用链表实现的</li>
-<li>使用front（队头）和rear（队尾）来表示</li>
-<li>对队列的操作为出队和入队</li>
-</ul>
-</li>
-<li>静态队列<ul>
-<li>使用数组实现的</li>
-<li>静态队列通常都必须是循环队列</li>
-</ul>
-</li>
-</ul>
-<h2 id="循环队列的讲解"><a href="#循环队列的讲解" class="headerlink" title="循环队列的讲解"></a>循环队列的讲解</h2><p><strong>1. 静态队列为什么必须是循环队列</strong></p>
-<pre><code>减少对内存的浪费
-
-因为队列是从头部开始删除的，如果删除一个元素，则对头就往上移一个那被删除的空间就不可以再使用了
-
-如果我们使用传统的数组来实现静态队列，不管是出队还是入队数组则是一直再增
-</code></pre><p><strong>2. 循环队列需要几个参数来确定及含义的讲解</strong></p>
-<pre><code>- 需要2个参数来确定
-    - front   rear    
-</code></pre><p><strong>3.循环队列各个参数的含义</strong></p>
-<pre><code>- 2个参数不同场合有不同的含义（建议初学者先记住，然后慢慢体会）
-    - 1）队列初始化
-        -  font和rear的值都是零
-    - 2）队列非空
-        - font代表的是队列的第一个元素
-        - rear代表的是队列的最后一个有效元素
-    - 3）队列空
-        - font和rear的值相等，但不一定是零
-</code></pre><p><strong>4. 循环队列入队伪算法讲解</strong></p>
-<pre><code>两步完成：
-    将值存入r所代表的位置
-    错误的写法r= r+1;
-    正确的写法是： r = (r+1) %数组的长度
-</code></pre><p><strong>5. 循环队列出队伪算法讲解</strong></p>
-<pre><code>一步完成：
-    f = （f+1）%数组的长度
-</code></pre><p><strong>6. 如何判断循环队列是否为空</strong></p>
-<pre><code>如果front与rear的值相等，
-则该队列一定为空
-</code></pre><p><strong>7. 如何判断循环队列是否已满</strong></p>
-<pre><code>两种方式：
-    1.多增加一个标志参数
-    2.少使用一个元素（常用）：如果r和f的值紧挨着，则队列已满
-    算法： if((r+1)%数组长度==f)
-            已满
-          else
-            不满
-</code></pre><h2 id="队列的算法"><a href="#队列的算法" class="headerlink" title="队列的算法"></a>队列的算法</h2><p>出队</p>
-<p> xunhuan.c</p>
-<p>入队</p>
-<h2 id="队列的具体应用"><a href="#队列的具体应用" class="headerlink" title="队列的具体应用"></a>队列的具体应用</h2><p>所以和时间的有关的操作都有队列的影子</p>
+        <h3 id="什么是数组？"><a href="#什么是数组？" class="headerlink" title="什么是数组？"></a>什么是数组？</h3><p>数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。</p>
+<p><strong>线性表:</strong>就是数据排成一条线的结构</p>
+<h3 id="随机访问？"><a href="#随机访问？" class="headerlink" title="随机访问？"></a>随机访问？</h3><p>因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。</p>
+<h3 id="数组如何实现随机访问性？"><a href="#数组如何实现随机访问性？" class="headerlink" title="数组如何实现随机访问性？"></a>数组如何实现随机访问性？</h3><p>计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:<br>a[i]_address = base_address + i * data_type_size</p>
+<h3 id="低效的“删除”和“插入”"><a href="#低效的“删除”和“插入”" class="headerlink" title="低效的“删除”和“插入”"></a>低效的“删除”和“插入”</h3><p><strong>插入</strong></p>
+<p>在数组中插入一个值，假设数组长度为n，我们要在末尾插入，时间复杂度则为O(1)，如果在k的位置插入则为O(n)，其实我们可以在k要删除的位置元素，我们可以将k的数据搬到元素的末尾，将新元素插入到k位置。</p>
+<p><strong>删除</strong></p>
+<p>每次要删除的时候，我们可以记录下要删除元素的数据，当数组没有存储空间的时候，一次性触发删除。</p>
+<h3 id="为什么数组是从0开始的？"><a href="#为什么数组是从0开始的？" class="headerlink" title="为什么数组是从0开始的？"></a>为什么数组是从0开始的？</h3><p>数组的存储的内存模型来看，“下标”简称偏移量，如果a表示数组的首地址，a[0]就是偏移量为0的位置，也就是首地址，a[k] 就表示偏移 k 个 type_size 的位置，运用的就是上面那个公式。如果数组从1开始，每次随机访问数组元素都多了一次减法运算，对于 CPU 来说，就是多了一次减法指令。</p>
 
       
 
@@ -321,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/21/队列/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/21/数组/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -335,15 +281,20 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/21/数据结构概述/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/11/21/java内存分配/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据结构概述
+          java内存分配
         
       </div>
     </a>
   
+  
+    <a href="/2018/11/21/郝斌_数据结构概述/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构概述</div>
+      <i class="icon-circle-right"></i>
+    </a>
   
 </nav>
 
@@ -360,6 +311,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#什么是数组？"><span class="toc-number">1.</span> <span class="toc-text">什么是数组？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#随机访问？"><span class="toc-number">2.</span> <span class="toc-text">随机访问？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#数组如何实现随机访问性？"><span class="toc-number">3.</span> <span class="toc-text">数组如何实现随机访问性？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#低效的“删除”和“插入”"><span class="toc-number">4.</span> <span class="toc-text">低效的“删除”和“插入”</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#为什么数组是从0开始的？"><span class="toc-number">5.</span> <span class="toc-text">为什么数组是从0开始的？</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -546,7 +510,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     
     	<section class="tools-section tools-section-me" q-show="aboutme">
   	  	
-  	  		<div class="aboutme-wrap" id="js-aboutme">很惭愧&lt;br&gt;&lt;br&gt;只做了一点微小的工作&lt;br&gt;谢谢大家</div>
+  	  		<div class="aboutme-wrap" id="js-aboutme">正在开发中&lt;br&gt;&lt;br&gt;请期待哦&lt;br&gt;</div>
   	  	
     	</section>
     
