@@ -8,17 +8,17 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>java内存分配 | 小可爱的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。 堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。 全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化">
+  <meta name="description" content="栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。 全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的">
 <meta property="og:type" content="article">
 <meta property="og:title" content="java内存分配">
 <meta property="og:url" content="http://yoursite.com/2018/11/21/java内存分配/index.html">
 <meta property="og:site_name" content="小可爱的博客">
-<meta property="og:description" content="栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。 堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。 全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化">
+<meta property="og:description" content="栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。 全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:updated_time" content="2018-11-21T14:18:40.769Z">
+<meta property="og:updated_time" content="2018-11-21T14:25:10.768Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="java内存分配">
-<meta name="twitter:description" content="栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。 堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。 全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化">
+<meta name="twitter:description" content="栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。 全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的">
   
     <link rel="alternative" href="/atom.xml" title="小可爱的博客" type="application/atom+xml">
   
@@ -169,8 +169,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
-<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
-<p><strong>堆区（heap）</strong>：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。</p>
+<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。<br><!-- more --><br><strong>堆区（heap）</strong>：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。</p>
 <p><strong>全局区（静态区）（static）</strong>：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，程序结束后由系统释放。</p>
 <p><strong>文字常量区：常量字符文字常量区</strong>：常量字符串就是放在这里的，程序结束后由系统释放。</p>
 <p><strong>程序代码区：</strong>存放函数体的二进制代码。</p>
@@ -279,8 +278,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2018/11/21/郝斌_数据结构概述/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">数据结构概述</div>
+    <a href="/2018/11/21/数组/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数组</div>
       <i class="icon-circle-right"></i>
     </a>
   

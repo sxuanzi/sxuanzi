@@ -167,8 +167,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
-<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。</p>
-<p><strong>堆区（heap）</strong>：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。</p>
+<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。<br><!-- more --><br><strong>堆区（heap）</strong>：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。</p>
 <p><strong>全局区（静态区）（static）</strong>：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，程序结束后由系统释放。</p>
 <p><strong>文字常量区：常量字符文字常量区</strong>：常量字符串就是放在这里的，程序结束后由系统释放。</p>
 <p><strong>程序代码区：</strong>存放函数体的二进制代码。</p>
@@ -196,6 +195,89 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/21/java内存分配/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-数组" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/数组/">数组</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/21/数组/" class="archive-article-date">
+  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+<h3 id="什么是数组？"><a href="#什么是数组？" class="headerlink" title="什么是数组？"></a>什么是数组？</h3><p>数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。</p>
+<p><strong>线性表:</strong>就是数据排成一条线的结构</p>
+<h3 id="随机访问？"><a href="#随机访问？" class="headerlink" title="随机访问？"></a>随机访问？</h3><p>因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。</p>
+<h3 id="数组如何实现随机访问性？"><a href="#数组如何实现随机访问性？" class="headerlink" title="数组如何实现随机访问性？"></a>数组如何实现随机访问性？</h3><p>计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:<br>a[i]_address = base_address + i * data_type_size</p>
+<h3 id="低效的“删除”和“插入”"><a href="#低效的“删除”和“插入”" class="headerlink" title="低效的“删除”和“插入”"></a>低效的“删除”和“插入”</h3><p><strong>插入</strong></p>
+<p>在数组中插入一个值，假设数组长度为n，我们要在末尾插入，时间复杂度则为O(1)，如果在k的位置插入则为O(n)，其实我们可以在k要删除的位置元素，我们可以将k的数据搬到元素的末尾，将新元素插入到k位置。</p>
+<p><strong>删除</strong></p>
+<p>每次要删除的时候，我们可以记录下要删除元素的数据，当数组没有存储空间的时候，一次性触发删除。</p>
+<h3 id="为什么数组是从0开始的？"><a href="#为什么数组是从0开始的？" class="headerlink" title="为什么数组是从0开始的？"></a>为什么数组是从0开始的？</h3><p>数组的存储的内存模型来看，“下标”简称偏移量，如果a表示数组的首地址，a[0]就是偏移量为0的位置，也就是首地址，a[k] 就表示偏移 k 个 type_size 的位置，运用的就是上面那个公式。如果数组从1开始，每次随机访问数组元素都多了一次减法运算，对于 CPU 来说，就是多了一次减法指令。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/21/数组/">展开全文 >></a>
         </p>
       
 
@@ -436,165 +518,6 @@ void f(struct Student * pst){
 
 
   
-    <article id="post-数组" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/数组/">数组</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/21/数组/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <a id="more"></a>
-<h3 id="什么是数组？"><a href="#什么是数组？" class="headerlink" title="什么是数组？"></a>什么是数组？</h3><p>数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。</p>
-<p><strong>线性表:</strong>就是数据排成一条线的结构</p>
-<h3 id="随机访问？"><a href="#随机访问？" class="headerlink" title="随机访问？"></a>随机访问？</h3><p>因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。</p>
-<h3 id="数组如何实现随机访问性？"><a href="#数组如何实现随机访问性？" class="headerlink" title="数组如何实现随机访问性？"></a>数组如何实现随机访问性？</h3><p>计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:<br>a[i]_address = base_address + i * data_type_size</p>
-<h3 id="低效的“删除”和“插入”"><a href="#低效的“删除”和“插入”" class="headerlink" title="低效的“删除”和“插入”"></a>低效的“删除”和“插入”</h3><p><strong>插入</strong></p>
-<p>在数组中插入一个值，假设数组长度为n，我们要在末尾插入，时间复杂度则为O(1)，如果在k的位置插入则为O(n)，其实我们可以在k要删除的位置元素，我们可以将k的数据搬到元素的末尾，将新元素插入到k位置。</p>
-<p><strong>删除</strong></p>
-<p>每次要删除的时候，我们可以记录下要删除元素的数据，当数组没有存储空间的时候，一次性触发删除。</p>
-<h3 id="为什么数组是从0开始的？"><a href="#为什么数组是从0开始的？" class="headerlink" title="为什么数组是从0开始的？"></a>为什么数组是从0开始的？</h3><p>数组的存储的内存模型来看，“下标”简称偏移量，如果a表示数组的首地址，a[0]就是偏移量为0的位置，也就是首地址，a[k] 就表示偏移 k 个 type_size 的位置，运用的就是上面那个公式。如果数组从1开始，每次随机访问数组元素都多了一次减法运算，对于 CPU 来说，就是多了一次减法指令。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/数组/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-郝斌_递归" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/郝斌_递归/">递归</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/21/郝斌_递归/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2>
-        
-          <a class="article-more-a" href="/2018/11/21/郝斌_递归/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/郝斌_递归/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-郝斌_线性结构" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
@@ -753,6 +676,82 @@ typedef struct Node{
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/11/21/郝斌_线性结构/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-郝斌_递归" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/21/郝斌_递归/">递归</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/21/郝斌_递归/" class="archive-article-date">
+  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2>
+        
+          <a class="article-more-a" href="/2018/11/21/郝斌_递归/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/21/郝斌_递归/">展开全文 >></a>
         </p>
       
 
