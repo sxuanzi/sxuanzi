@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>队列 | 小可爱的博客</title>
+  <title>递归 | 小可爱的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="队列">
+  <meta name="description" content="递归">
 <meta property="og:type" content="article">
-<meta property="og:title" content="队列">
-<meta property="og:url" content="http://yoursite.com/2018/11/21/郝斌_队列/index.html">
+<meta property="og:title" content="递归">
+<meta property="og:url" content="http://yoursite.com/2018/11/25/郝斌_递归/index.html">
 <meta property="og:site_name" content="小可爱的博客">
-<meta property="og:description" content="队列">
+<meta property="og:description" content="递归">
 <meta property="og:locale" content="zh_Hans">
-<meta property="og:image" content="https://i.imgur.com/Hr4AR4L.png">
-<meta property="og:updated_time" content="2018-11-21T14:18:32.364Z">
+<meta property="og:updated_time" content="2018-12-15T13:44:24.019Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="队列">
-<meta name="twitter:description" content="队列">
-<meta name="twitter:image" content="https://i.imgur.com/Hr4AR4L.png">
+<meta name="twitter:title" content="递归">
+<meta name="twitter:description" content="递归">
   
     <link rel="alternative" href="/atom.xml" title="小可爱的博客" type="application/atom+xml">
   
@@ -150,82 +148,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-郝斌_队列" class="article article-type-post " itemscope="" itemprop="blogPost">
+            <article id="post-郝斌_递归" class="article article-type-post " itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      队列
+      递归
     </h1>
   
 
         
-        <a href="/2018/11/21/郝斌_队列/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+        <a href="/2018/11/25/郝斌_递归/" class="archive-article-date">
+  	<time datetime="2018-11-25T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><img src="https://i.imgur.com/Hr4AR4L.png" alt=""></p>
-<a id="more"></a>
-<h4 id="队列定义：一种可以实现“先进先出”的存储结构"><a href="#队列定义：一种可以实现“先进先出”的存储结构" class="headerlink" title="队列定义：一种可以实现“先进先出”的存储结构"></a>队列定义：一种可以实现“先进先出”的存储结构</h4><h4 id="队列分类"><a href="#队列分类" class="headerlink" title="队列分类"></a>队列分类</h4><ul>
-<li>链式队列<ul>
-<li>使用链表实现的</li>
-<li>使用front（队头）和rear（队尾）来表示</li>
-<li>对队列的操作为出队和入队</li>
+        <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2><a id="more"></a>
+<h3 id="递归的概念"><a href="#递归的概念" class="headerlink" title="递归的概念"></a>递归的概念</h3><pre><code>一个函数自己直接或者间接调用自己
+</code></pre><h3 id="函数的调用"><a href="#函数的调用" class="headerlink" title="函数的调用"></a>函数的调用</h3><ul>
+<li><p>当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事情：</p>
+<ul>
+<li>1.将所有的实际参数，返回地址等信息传递给被调函数保存</li>
+<li>2.为被调函数的局部变量（也包括形参）分配空间</li>
+<li>3.将控制转移到被调函数的入口</li>
 </ul>
 </li>
-<li>静态队列<ul>
-<li>使用数组实现的</li>
-<li>静态队列通常都必须是循环队列</li>
+<li><p>从被调函数返回主调函数之前，系统也要完成三件事情：</p>
+<ul>
+<li>1.保存被调函数的返回结果</li>
+<li>2.释放被调函数所占的存储空间</li>
+<li>3.依照被调函数保存的返回地址将控制转移到调用函数</li>
 </ul>
 </li>
+<li>当有多个函数相互调用时，按照“后调用先返回”的原则，上述函数之间信息传递和控制转移必须借助“栈”来实现，即系统将整个程序运行时所需的数据空间安排在一个栈中，每当调用一个函数时，就在栈顶分配一个存储区，进行压栈操作，每当一个函数退出时，就释放它的存储区，就行出栈操作，当前运行的函数永远都在栈顶位置</li>
+<li>A函数调用A函数和A函数调用B函数在计算机看来是没有任何区别的，只不过用我们日常的思维方式理解比较怪异</li>
 </ul>
-<h2 id="循环队列的讲解"><a href="#循环队列的讲解" class="headerlink" title="循环队列的讲解"></a>循环队列的讲解</h2><p><strong>1. 静态队列为什么必须是循环队列</strong></p>
-<pre><code>减少对内存的浪费
-
-因为队列是从头部开始删除的，如果删除一个元素，则对头就往上移一个那被删除的空间就不可以再使用了
-
-如果我们使用传统的数组来实现静态队列，不管是出队还是入队数组则是一直再增
-</code></pre><p><strong>2. 循环队列需要几个参数来确定及含义的讲解</strong></p>
-<pre><code>- 需要2个参数来确定
-    - front   rear    
-</code></pre><p><strong>3.循环队列各个参数的含义</strong></p>
-<pre><code>- 2个参数不同场合有不同的含义（建议初学者先记住，然后慢慢体会）
-    - 1）队列初始化
-        -  font和rear的值都是零
-    - 2）队列非空
-        - font代表的是队列的第一个元素
-        - rear代表的是队列的最后一个有效元素
-    - 3）队列空
-        - font和rear的值相等，但不一定是零
-</code></pre><p><strong>4. 循环队列入队伪算法讲解</strong></p>
-<pre><code>两步完成：
-    将值存入r所代表的位置
-    错误的写法r= r+1;
-    正确的写法是： r = (r+1) %数组的长度
-</code></pre><p><strong>5. 循环队列出队伪算法讲解</strong></p>
-<pre><code>一步完成：
-    f = （f+1）%数组的长度
-</code></pre><p><strong>6. 如何判断循环队列是否为空</strong></p>
-<pre><code>如果front与rear的值相等，
-则该队列一定为空
-</code></pre><p><strong>7. 如何判断循环队列是否已满</strong></p>
-<pre><code>两种方式：
-    1.多增加一个标志参数
-    2.少使用一个元素（常用）：如果r和f的值紧挨着，则队列已满
-    算法： if((r+1)%数组长度==f)
-            已满
-          else
-            不满
-</code></pre><h2 id="队列的算法"><a href="#队列的算法" class="headerlink" title="队列的算法"></a>队列的算法</h2><p>出队</p>
-<p> xunhuan.c</p>
-<p>入队</p>
-<h2 id="队列的具体应用"><a href="#队列的具体应用" class="headerlink" title="队列的具体应用"></a>队列的具体应用</h2><p>所以和时间的有关的操作都有队列的影子</p>
+<h3 id="递归必须满足的三个条件"><a href="#递归必须满足的三个条件" class="headerlink" title="递归必须满足的三个条件"></a>递归必须满足的三个条件</h3><ol>
+<li>递归必须得有一个明确的中止条件</li>
+<li>该函数所处理的数据规模必须在递减</li>
+<li>这个转化必须是可解的</li>
+</ol>
+<h3 id="循环和递归的"><a href="#循环和递归的" class="headerlink" title="循环和递归的"></a>循环和递归的</h3><p>递归：</p>
+<pre><code>- 易于理解
+- 速度慢
+- 存储空间大
+</code></pre><p>循环</p>
+<pre><code>- 不易理解
+- 速度快
+- 存储空间小
+</code></pre><h3 id="汉诺塔"><a href="#汉诺塔" class="headerlink" title="汉诺塔"></a>汉诺塔</h3><p>印象笔记</p>
+<h3 id="走迷宫"><a href="#走迷宫" class="headerlink" title="走迷宫"></a>走迷宫</h3><p>比如有东南西北四个方向，将每一个方向进行压栈处理，当一个方向走完就进行出栈处理。</p>
+<h3 id="递归的应用"><a href="#递归的应用" class="headerlink" title="递归的应用"></a>递归的应用</h3><p>树和森林就是以递归的方式定义的</p>
+<p>数和图很多算法都是以递归来实现的</p>
+<p>很多数学公式就是以递归的方式定义的</p>
 
       
 
@@ -316,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/21/郝斌_队列/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/25/郝斌_递归/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -330,18 +310,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/11/21/郝斌_递归/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/12/26/git基础/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          递归
+          (no title)
         
       </div>
     </a>
   
   
-    <a href="/2018/11/21/链表/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">链表</div>
+    <a href="/2018/11/24/郝斌_队列/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">队列</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -368,7 +348,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#队列"><span class="toc-number">1.</span> <span class="toc-text">队列</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#队列定义：一种可以实现“先进先出”的存储结构"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">队列定义：一种可以实现“先进先出”的存储结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#队列分类"><span class="toc-number">1.0.0.2.</span> <span class="toc-text">队列分类</span></a></li></ol></li></ol><li class="toc-item toc-level-2"><a class="toc-link" href="#循环队列的讲解"><span class="toc-number">1.1.</span> <span class="toc-text">循环队列的讲解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列的算法"><span class="toc-number">1.2.</span> <span class="toc-text">队列的算法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#队列的具体应用"><span class="toc-number">1.3.</span> <span class="toc-text">队列的具体应用</span></a></li>
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#递归"><span class="toc-number">1.</span> <span class="toc-text">递归</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#递归的概念"><span class="toc-number">1.1.</span> <span class="toc-text">递归的概念</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#函数的调用"><span class="toc-number">1.2.</span> <span class="toc-text">函数的调用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归必须满足的三个条件"><span class="toc-number">1.3.</span> <span class="toc-text">递归必须满足的三个条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#循环和递归的"><span class="toc-number">1.4.</span> <span class="toc-text">循环和递归的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#汉诺塔"><span class="toc-number">1.5.</span> <span class="toc-text">汉诺塔</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#走迷宫"><span class="toc-number">1.6.</span> <span class="toc-text">走迷宫</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#递归的应用"><span class="toc-number">1.7.</span> <span class="toc-text">递归的应用</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>

@@ -146,31 +146,68 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-java内存分配" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-git基础" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/java内存分配/">java内存分配</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/21/java内存分配/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
-</a>
-        
-      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。<br><!-- more --><br><strong>堆区（heap）</strong>：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。</p>
-<p><strong>全局区（静态区）（static）</strong>：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，程序结束后由系统释放。</p>
-<p><strong>文字常量区：常量字符文字常量区</strong>：常量字符串就是放在这里的，程序结束后由系统释放。</p>
-<p><strong>程序代码区：</strong>存放函数体的二进制代码。</p>
+        <h3 id="安装github"><a href="#安装github" class="headerlink" title="安装github"></a>安装github</h3><p>点击下面的链接可以到达git下载，根据你的安装系统进行安装</p>
+<p><a href="https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git" target="_blank" rel="noopener">https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89%E8%A3%85-Git</a></p>
+<h3 id="最小配置（配置user信息）"><a href="#最小配置（配置user信息）" class="headerlink" title="最小配置（配置user信息）"></a>最小配置（配置user信息）</h3><p>配置user.name 和user.email 信息</p>
+<pre><code>git config --global user.name &apos;your_name&apos;
+git config --global user.email &apos;your_email@domain.com&apos;
+</code></pre><p><strong>配置user信息原因：</strong>每次的变更都是带着个人信息，git会自动的把变更者的信息取出来，然后发送邮件给变更人</p>
+<p>其中 –global 的配置是可以更改的</p>
+<pre><code>git config --local   //local只对每个仓库有效
+git config --global   //global对当前用户的所以仓库有效
+git config --system   //system对系统所以登陆的用户有效
+</code></pre><p>仓库：在使用git的时候，git会管理文件系统，比如，你在C盘的git文件中创建了一个git的仓库，这个仓库就相当于一个独立的项目管理的区域；</p>
+<p>可以使用 <strong>–list</strong>来查看某个配置的所有的信息,例如</p>
+<pre><code>git config --list --global 
+</code></pre><h3 id="创建Git仓库"><a href="#创建Git仓库" class="headerlink" title="创建Git仓库"></a>创建Git仓库</h3><p>两个场景：</p>
+<p>1.把已有的项目代码纳入到Git管理</p>
+<pre><code>cd 项目代码所在文件夹
+git init
+</code></pre><p>2.新建的项目直接用Git管理（还没用项目代码）</p>
+<pre><code>cd 某个文件夹    
+git init your_project_name  #会在当前路径下创建和项目名称同名的文件夹
+cd your_project_name
+</code></pre><h3 id="往仓库添加文件"><a href="#往仓库添加文件" class="headerlink" title="往仓库添加文件"></a>往仓库添加文件</h3><p><strong>版本历史</strong>&lt;–(git commit -m ‘添加的原因’)–<strong>暂存区</strong>&lt;–（git add files（git add -u :提交所有的文件））– <strong>工作目录</strong></p>
+<h3 id="重命名文件名"><a href="#重命名文件名" class="headerlink" title="重命名文件名"></a>重命名文件名</h3><p>如果使用mv修改文件名，会导致git会重新添加一个文件名，并且原来的的文件也存在</p>
+<pre><code>mv readme  readme.md  //加入文件名叫readme 想要改为readme.md
+</code></pre><p>那么我们就要删除原来的文件</p>
+<pre><code> git rm readme   //删除readme
+git add readme.md   //再添加文件
+</code></pre><p>现在我们重新清除到暂存区里面的东西，使用另外一种方式来重命名：</p>
+<pre><code>git reset --hard  //清除暂存区里面所有的东西
+gir mv readme  readme.md  //加入文件名叫readme 想要改为readme.md
+</code></pre><h3 id="git-log查看版本演变历史"><a href="#git-log查看版本演变历史" class="headerlink" title="git log查看版本演变历史"></a>git log查看版本演变历史</h3><ul>
+<li>git log –all 查看所有分支的历史</li>
+<li>git log –all –graph 查看图形化的 log 地址</li>
+<li>git log –oneline 查看单行的简洁历史。</li>
+<li>git log –oneline -n4 查看最近的四条简洁历史。</li>
+<li>git log –oneline –all -n4 –graph 查看所有分支最近 4 条单行的图形化历史。</li>
+<li>git help –web log 跳转到git log 的帮助文档网页</li>
+</ul>
+<h3 id="通过图形界面查看版本历史"><a href="#通过图形界面查看版本历史" class="headerlink" title="通过图形界面查看版本历史"></a>通过图形界面查看版本历史</h3><pre><code>gitk
+</code></pre><p><img src="https://i.imgur.com/J6tCQ1T.png" alt=""></p>
+<h3 id="探秘-git目录"><a href="#探秘-git目录" class="headerlink" title="探秘.git目录"></a>探秘.git目录</h3><p>config:存放配置信息(我们在配置user信息的时候，配置过config)</p>
+<p>HAD:你正在工作在那个分支(编辑head可以进行切换分支)</p>
+<p>refs：存放各个分支，或者是tags的信息 </p>
+<ul>
+<li>tags:存放tag,又名里程碑（项目开发到一定的程序，你就可以标识v1.0，到下一个阶段可以是v2.0）</li>
+<li>heads:分支，独立的开发空间<ul>
+<li>master  属于commit对象</li>
+<li>temp        属于commit对象</li>
+</ul>
+</li>
+<li>objects：存放对象 </li>
+</ul>
+<p>git car-file：显示版本库对象的内容、类型及大小信息</p>
+<p>git car-file -t 哈希值：查看该哈希值对象的类型</p>
+<p>git car-file -p 哈希值：查看该哈希值对象的内容</p>
+<p>git car-file -s 哈希值：查看该哈希值对象的大小    </p>
+<h3 id="分离头指针"><a href="#分离头指针" class="headerlink" title="分离头指针"></a>分离头指针</h3><p>分离头指针的含义：表示我们正工作在一个没有分支的状态下<br>缺点：容易没有在某个分支下进行，git会认为操作的数据，属于垃圾数据，就会导致数据丢失。<br>分离头指针的使用：当我们想操作一些变更，但是这个变更你只是尝试下，如果你决定觉得这个变更不好，那么你就可以切换到其他的分支，之前的变更也不会存储</p>
 
       
 
@@ -180,21 +217,10 @@
       
       
       
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/java基础//" class="article-tag-list-link color2">java基础</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/java内存分配/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/12/26/git基础/">展开全文 >></a>
         </p>
       
 
@@ -224,37 +250,30 @@
 
 
   
-    <article id="post-数组" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-郝斌_递归" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/数组/">数组</a>
+      <a class="article-title" href="/2018/11/25/郝斌_递归/">递归</a>
     </h1>
   
 
         
-        <a href="/2018/11/21/数组/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+        <a href="/2018/11/25/郝斌_递归/" class="archive-article-date">
+  	<time datetime="2018-11-25T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-25</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-<h3 id="什么是数组？"><a href="#什么是数组？" class="headerlink" title="什么是数组？"></a>什么是数组？</h3><p>数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。</p>
-<p><strong>线性表:</strong>就是数据排成一条线的结构</p>
-<h3 id="随机访问？"><a href="#随机访问？" class="headerlink" title="随机访问？"></a>随机访问？</h3><p>因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。</p>
-<h3 id="数组如何实现随机访问性？"><a href="#数组如何实现随机访问性？" class="headerlink" title="数组如何实现随机访问性？"></a>数组如何实现随机访问性？</h3><p>计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:<br>a[i]_address = base_address + i * data_type_size</p>
-<h3 id="低效的“删除”和“插入”"><a href="#低效的“删除”和“插入”" class="headerlink" title="低效的“删除”和“插入”"></a>低效的“删除”和“插入”</h3><p><strong>插入</strong></p>
-<p>在数组中插入一个值，假设数组长度为n，我们要在末尾插入，时间复杂度则为O(1)，如果在k的位置插入则为O(n)，其实我们可以在k要删除的位置元素，我们可以将k的数据搬到元素的末尾，将新元素插入到k位置。</p>
-<p><strong>删除</strong></p>
-<p>每次要删除的时候，我们可以记录下要删除元素的数据，当数组没有存储空间的时候，一次性触发删除。</p>
-<h3 id="为什么数组是从0开始的？"><a href="#为什么数组是从0开始的？" class="headerlink" title="为什么数组是从0开始的？"></a>为什么数组是从0开始的？</h3><p>数组的存储的内存模型来看，“下标”简称偏移量，如果a表示数组的首地址，a[0]就是偏移量为0的位置，也就是首地址，a[k] 就表示偏移 k 个 type_size 的位置，运用的就是上面那个公式。如果数组从1开始，每次随机访问数组元素都多了一次减法运算，对于 CPU 来说，就是多了一次减法指令。</p>
-
+        <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2>
+        
+          <a class="article-more-a" href="/2018/11/25/郝斌_递归/#more">more >></a>
+        
       
 
       
@@ -277,7 +296,83 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/数组/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/25/郝斌_递归/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-郝斌_队列" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/11/24/郝斌_队列/">队列</a>
+    </h1>
+  
+
+        
+        <a href="/2018/11/24/郝斌_队列/" class="archive-article-date">
+  	<time datetime="2018-11-24T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><img src="https://i.imgur.com/Hr4AR4L.png" alt=""></p>
+        
+          <a class="article-more-a" href="/2018/11/24/郝斌_队列/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/11/24/郝斌_队列/">展开全文 >></a>
         </p>
       
 
@@ -314,13 +409,13 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/郝斌_线性结构/">线性结构</a>
+      <a class="article-title" href="/2018/11/23/郝斌_线性结构/">线性结构</a>
     </h1>
   
 
         
-        <a href="/2018/11/21/郝斌_线性结构/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+        <a href="/2018/11/23/郝斌_线性结构/" class="archive-article-date">
+  	<time datetime="2018-11-23T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-23</time>
 </a>
         
       </header>
@@ -441,7 +536,7 @@ typedef struct Node{
 <h3 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h3><p>出栈<br>压栈</p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><p>栈程序演示<br>  栈：top和button</p>
 <h3 id="栈的应用"><a href="#栈的应用" class="headerlink" title="栈的应用"></a>栈的应用</h3><p>函数调用，中断，表达式求值，内存分配，缓冲处理，迷宫</p>
-<h2 id="线性结构的两种常见应用之二-队列"><a href="#线性结构的两种常见应用之二-队列" class="headerlink" title="线性结构的两种常见应用之二 队列"></a>线性结构的两种常见应用之二 队列</h2><h2 id="专题：递归"><a href="#专题：递归" class="headerlink" title="专题：递归"></a>专题：递归</h2>
+
       
 
       
@@ -464,7 +559,7 @@ typedef struct Node{
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/郝斌_线性结构/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/23/郝斌_线性结构/">展开全文 >></a>
         </p>
       
 
@@ -494,20 +589,20 @@ typedef struct Node{
 
 
   
-    <article id="post-郝斌_数据结构概述" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-郝斌_c语言数据结构预备知识" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/郝斌_数据结构概述/">数据结构概述</a>
+      <a class="article-title" href="/2018/11/22/郝斌_c语言数据结构预备知识/">数据结构概述</a>
     </h1>
   
 
         
-        <a href="/2018/11/21/郝斌_数据结构概述/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
+        <a href="/2018/11/22/郝斌_c语言数据结构预备知识/" class="archive-article-date">
+  	<time datetime="2018-11-22T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-22</time>
 </a>
         
       </header>
@@ -675,7 +770,7 @@ void f(struct Student * pst){
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/郝斌_数据结构概述/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/22/郝斌_c语言数据结构预备知识/">展开全文 >></a>
         </p>
       
 
@@ -705,171 +800,19 @@ void f(struct Student * pst){
 
 
   
-    <article id="post-郝斌_递归" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
+    <article id="post-java内存分配" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/郝斌_递归/">递归</a>
+      <a class="article-title" href="/2018/11/21/java内存分配/">java内存分配</a>
     </h1>
   
 
         
-        <a href="/2018/11/21/郝斌_递归/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h2>
-        
-          <a class="article-more-a" href="/2018/11/21/郝斌_递归/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/郝斌_递归/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-郝斌_队列" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/郝斌_队列/">队列</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/21/郝斌_队列/" class="archive-article-date">
-  	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h1><p><img src="https://i.imgur.com/Hr4AR4L.png" alt=""></p>
-        
-          <a class="article-more-a" href="/2018/11/21/郝斌_队列/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/郝斌_队列/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-链表" class="article article-type-post  article-index" itemscope="" itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/11/21/链表/">链表</a>
-    </h1>
-  
-
-        
-        <a href="/2018/11/21/链表/" class="archive-article-date">
+        <a href="/2018/11/21/java内存分配/" class="archive-article-date">
   	<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-11-21</time>
 </a>
         
@@ -878,26 +821,11 @@ void f(struct Student * pst){
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
-<h3 id="什么是链表？"><a href="#什么是链表？" class="headerlink" title="什么是链表？"></a>什么是链表？</h3><p>通过指针将离散的内存空间连接一起。</p>
-<h3 id="什么叫节点？"><a href="#什么叫节点？" class="headerlink" title="什么叫节点？"></a>什么叫节点？</h3><p>将内存快称为节点</p>
-<h3 id="什么叫做后续指针next？"><a href="#什么叫做后续指针next？" class="headerlink" title="什么叫做后续指针next？"></a>什么叫做后续指针next？</h3><p>每个链表的结点除了存储数据，还需要存储链上指向下一个结点的地址。</p>
-<p>记录下结点地址的指针叫做后续指针next</p>
-<p>链表有两个特殊的节点</p>
-<ul>
-<li>一个是叫做头结点</li>
-<li>一个叫做尾结点</li>
-</ul>
-<h3 id="什么叫做头结点？"><a href="#什么叫做头结点？" class="headerlink" title="什么叫做头结点？"></a>什么叫做头结点？</h3><p>头结点用来记录链表的基地址</p>
-<h3 id="什么叫做尾结点？"><a href="#什么叫做尾结点？" class="headerlink" title="什么叫做尾结点？"></a>什么叫做尾结点？</h3><p>指针不是指向下一个结点地址，而是指向一个NULL地址，表示链表的最后一个结点。</p>
-<ul>
-<li>链表的插入和删除结点O(1)</li>
-<li>链表的随机访问性度O(n)</li>
-</ul>
-<h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p>就是将尾结点的指针指向链表的头结点</p>
-<h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>每个结点有一个前驱指针prev指向前面的结点,还有一个后续指针next指向后面的结点<br>好处:双向链表可以支持在O(1)时间复杂度的情况下找到前驱结点</p>
-<p><strong>思考:</strong><br>通过学习，我们以后知道一个很重要的知识点:用空间换时间的设计思想，当内存充足的时候，如果我们追求代码执行的速度，空间复杂度比较高，时间复杂度比较低的算法和数据结构。如果内存比较紧缺，比如代码是执行在手机或者单片机上，这个时候就反过来用时间换空间的设计思想。</p>
-<p><strong>缓存就是利用了空间换时间的设计思想。</strong></p>
-<h3 id="链表VS数组"><a href="#链表VS数组" class="headerlink" title="链表VS数组"></a>链表VS数组</h3><p>数组内存大小固定，不能扩容(如果要扩容就需要申请一个更大的数组，如何将原数组copy到新的数组中。)，随机访问数组高效，插入删除低效<br>链表:支持动态扩容，内存不限限制，因为链表每个结点都需要存下一次结点的指针，消耗内存翻倍，对链表的频繁删除和插入导致内存碎片。随机访问链表O(n)，插入删除O(1)</p>
+<p><strong>栈区（stack）</strong>：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。<br><!--more--></p>
+<p><strong>堆区（heap）</strong>：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。</p>
+<p><strong>全局区（静态区）（static）</strong>：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另一块区域，程序结束后由系统释放。</p>
+<p><strong>文字常量区：常量字符文字常量区</strong>：常量字符串就是放在这里的，程序结束后由系统释放。</p>
+<p><strong>程序代码区：</strong>存放函数体的二进制代码。</p>
 
       
 
@@ -912,7 +840,7 @@ void f(struct Student * pst){
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/数据结构//" class="article-tag-list-link color5">数据结构</a>
+        			<a href="/categories/java基础//" class="article-tag-list-link color2">java基础</a>
         		</li>
       		
 		</ul>
@@ -921,7 +849,7 @@ void f(struct Student * pst){
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/21/链表/">展开全文 >></a>
+          <a class="article-more-a" href="/2018/11/21/java内存分配/">展开全文 >></a>
         </p>
       
 
