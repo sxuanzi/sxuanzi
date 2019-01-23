@@ -3,7 +3,7 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 小可爱的博客
+title: 文煊的博客
 subtitle:
 description: 
 keywords:
@@ -73,7 +73,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: hexo-theme_1
+theme: hexo-casper
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -81,4 +81,24 @@ deploy:
   type: git 
   repository: https://github.com/sxuanzi/sxuanzi.git 
   branch: master 
+
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: false
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
   
