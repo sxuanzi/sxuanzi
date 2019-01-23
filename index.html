@@ -249,7 +249,11 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 				</div>
 			</article>
 			
-			<article class="post-card post  no-image ">
+			<article class="post-card post ">
+				
+				<a class="post-card-image-link" title="递归" href="/2018/11/25/郝斌_递归/">
+					<div class="post-card-image b-lazy" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548250049515&di=f65a7e3153c4f03544141c4d6cfc5cca&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fsinacn%2Fw1000h697%2F20180301%2F38d5-fwnpcns8234950.jpg"></div>
+				</a>
 				
 				<div class="post-card-content">
 					<a class="post-card-content-link" title="递归" href="/2018/11/25/郝斌_递归/">
@@ -272,25 +276,13 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 								
 								
 								
-								
-								递归
+
+递归
 递归的概念一个函数自己直接或者间接调用自己
 函数的调用
 当在一个函数的运行期间调用另一个函数时，在运行被调函数之前，系统需要完成三件事情：
 
-1.将所有的实际参数，返回地址等信息传递给被调函数保存
-2.为被调函数的局部变量（也包括形参）分配空间
-3.将控制转移到被调函数的入口
-
-
-从被调函数返回主调函数之前，系统也要完成三件事情：
-
-1.保存被调函数的返回结果
-2.释放被调函数所占的存储空间
-3.依照被调函数保存的返回地址将控制转移到调用函数
-
-
-当有多个函数相互调用时
+1.将所有的实际参数，返回地址等信息传递给被调函
 								...
 							</p>
 						</section>
@@ -314,7 +306,11 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 				</div>
 			</article>
 			
-			<article class="post-card post  no-image ">
+			<article class="post-card post ">
+				
+				<a class="post-card-image-link" title="队列" href="/2018/11/24/郝斌_队列/">
+					<div class="post-card-image b-lazy" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=4252096605,2058089716&fm=26&gp=0.jpg"></div>
+				</a>
 				
 				<div class="post-card-content">
 					<a class="post-card-content-link" title="队列" href="/2018/11/24/郝斌_队列/">
@@ -337,8 +333,7 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 								
 								
 								
-								
-								队列
+队列
 
 队列定义：一种可以实现“先进先出”的存储结构队列分类
 链式队列
@@ -349,17 +344,7 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 
 静态队列
 使用数组实现的
-静态队列通常都必须是循环队列
-
-
-
-循环队列的讲解1. 静态队列为什么必须是循环队列
-减少对内存的浪费
-
-因为队列是从头部开始删除的，如果删除一个元素，则对头就往上移一个那被删除的空间就不可以再使用了
-
-如果我们使用传统的数组来实现静态队列，不管是出队还是入队数组则是一直再增
-2. 循环
+静态队
 								...
 							</p>
 						</section>
@@ -383,7 +368,11 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 				</div>
 			</article>
 			
-			<article class="post-card post  no-image ">
+			<article class="post-card post ">
+				
+				<a class="post-card-image-link" title="线性结构" href="/2018/11/23/郝斌_线性结构/">
+					<div class="post-card-image b-lazy" data-src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1352452672,693068997&fm=26&gp=0.jpg"></div>
+				</a>
 				
 				<div class="post-card-content">
 					<a class="post-card-content-link" title="线性结构" href="/2018/11/23/郝斌_线性结构/">
@@ -406,18 +395,10 @@ https://git-scm.com/book/zh/v2/%E8%B5%B7%E6%AD%A5-%E5%AE%89
 								
 								
 								
-								
-								线性结构连续存储[数组]1.什么叫做数组  元素类型相同，大小相同
-连续存储数组的算法代码：Arr.c
-typedef的用法typedef int zhangsan;//为int再重新多取一个名字，zhangsan等价于int
-typedef struct Student{
-    int sid;
-    char name[100];
-    char sex;
-}st;
 
-int main(void){
-    int i =10;  //等价于zhangsan i =
+线性结构连续存储[数组]1.什么叫做数组  元素类型相同，大小相同
+连续存储数组的算法代码：Arr.c
+typedef的用法typedef int zhangsan;//为int再重新多取一个名字
 								...
 							</p>
 						</section>
@@ -441,7 +422,11 @@ int main(void){
 				</div>
 			</article>
 			
-			<article class="post-card post  no-image ">
+			<article class="post-card post ">
+				
+				<a class="post-card-image-link" title="数据结构概述" href="/2018/11/22/郝斌_c语言数据结构预备知识/">
+					<div class="post-card-image b-lazy" data-src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=3452920368,2660406217&fm=26&gp=0.jpg"></div>
+				</a>
 				
 				<div class="post-card-content">
 					<a class="post-card-content-link" title="数据结构概述" href="/2018/11/22/郝斌_c语言数据结构预备知识/">
@@ -464,16 +449,9 @@ int main(void){
 								
 								
 								
-								
-								
-一、数据结构概述1.什么是数据结构？  我们如何把现实中大量而复杂的问题以特定的数据类型和特定的存储结构保存到主存储器（内存）中，以及在此基础上为实现某个功能（比如查找某个元素，删除某个元素，对所有元素进行排序）而执行的相应操作，这个相应的操作也叫算法
-数据结构 = 个体的存储 + 个体的关系存储；
-算法 = 对存储数据的操作；
-2.衡量算法的标准
-1）时间复杂度：大概程序执行的次数，而非执行的时间
-2）空间复杂度： 算法执行过程中大概所占用的最大内存
-3）难易程度
-4）健
+
+
+一、数据结构概述1.什么是数据结构？  我们如何把现实中大量而复杂的问题以特定的数据类型和特定的存储结构保存到主存储器（内存）中，以及在此基础上为实现某个功能（比如查找某个元素，删除某个元素，对
 								...
 							</p>
 						</section>
@@ -522,9 +500,11 @@ int main(void){
 								
 								
 								
+
+
 栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
 堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。
-全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另
+全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻
 								...
 							</p>
 						</section>
@@ -548,7 +528,11 @@ int main(void){
 				</div>
 			</article>
 			
-			<article class="post-card post  no-image ">
+			<article class="post-card post ">
+				
+				<a class="post-card-image-link" title="数组" href="/2018/11/21/数组/">
+					<div class="post-card-image b-lazy" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548855107&di=b4ac25cd9bfb491a6d731b0bc0f3feea&imgtype=jpg&er=1&src=http%3A%2F%2Fimgsrc.baidu.com%2Fimgad%2Fpic%2Fitem%2Fa6efce1b9d16fdfab2799bc8be8f8c5494ee7bfa.jpg"></div>
+				</a>
 				
 				<div class="post-card-content">
 					<a class="post-card-content-link" title="数组" href="/2018/11/21/数组/">
@@ -571,77 +555,11 @@ int main(void){
 								
 								
 								
-								
-								
+
+
 什么是数组？数组是一种线性表数据结构，他用一组连续的内存空间，来存储一组具有相同类型的数组。
 线性表:就是数据排成一条线的结构
-随机访问？因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。
-数组如何实现随机访问性？计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:a[i]_address = base_address + i * data_type_size
-低效的“删除”和“插入
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">文煊</div>
-								
-								<a href="/about" class="static-avatar author-profile-image">
-									<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							1
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
-					<a class="post-card-content-link" title="链表" href="/2018/11/21/链表/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								
-								数据结构
-								| 
-								
-								<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished">
-									2018-11-21
-								</time>
-							</span>
-							<h2 class="post-card-title">链表</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								
-什么是链表？通过指针将离散的内存空间连接一起。
-什么叫节点？将内存快称为节点
-什么叫做后续指针next？每个链表的结点除了存储数据，还需要存储链上指向下一个结点的地址。
-记录下结点地址的指针叫做后续指针next
-链表有两个特殊的节点
-
-一个是叫做头结点
-一个叫做尾结点
-
-什么叫做头结点？头结点用来记录链表的基地址
-什么叫做尾结点？指针不是指向下一个结点地址，而是指向一个NULL地址，表示链表的最后一个结点。
-
-链表的插入和删除结点O(1)
-链表的随机访问性度O(n)
-
-循环
+随机访问？因为数组是连续内存空间和一组相同类型，可以使的数据具有随
 								...
 							</p>
 						</section>
@@ -730,8 +648,6 @@ int main(void){
       
       
       
-      
-      
     </ul>
   </div>
   <footer class="read-next-card-footer">
@@ -798,7 +714,7 @@ int main(void){
 <span id="busuanzi_container_site_pv">本站总访问量<span id="busuanzi_value_site_pv"></span>次</span>
 		<div class="theme-info">
 		  <div class="powered-by"></div>
-		  <span class="post-count">博客全站共6.4k字</span>
+		  <span class="post-count">博客全站共5.8k字</span>
 		</div>
     </div>
 
