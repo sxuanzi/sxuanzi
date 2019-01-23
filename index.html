@@ -169,7 +169,9 @@
 								
 								
 								
-								设计模式——1策略设计模式什么是设计模式？官方的来说:设计模式是一套被反复使用的代码设计经验的总结。使用设计模式的目的是为了可重用代码、让代码更容易被他人理解。通俗的来说就是当你知道做一个蛋炒饭，要先
+								
+
+设计模式——1策略设计模式什么是设计模式？官方的来说:设计模式是一套被反复使用的代码设计经验的总结。使用设计模式的目的是为了可重用代码、让代码更容易被他人理解。通俗的来说就是当你知道做一个蛋炒饭，
 								...
 							</p>
 						</section>
@@ -497,57 +499,6 @@ int main(void){
 			<article class="post-card post  no-image ">
 				
 				<div class="post-card-content">
-					<a class="post-card-content-link" title="java内存分配" href="/2018/11/21/java内存分配/">
-						<header class="post-card-header">
-							<span class="post-card-tags">
-								
-								
-								java基础
-								| 
-								
-								<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished">
-									2018-11-21
-								</time>
-							</span>
-							<h2 class="post-card-title">java内存分配</h2>
-						</header>
-						<section class="post-card-excerpt">
-							<p>
-								
-								
-								
-								
-								
-								
-栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
-堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。
-全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另
-								...
-							</p>
-						</section>
-					</a>
-					<footer class="post-card-meta">
-						<div class="author-list">
-							<div class="author-list-item">
-								<div class="author-name-tooltip">文煊</div>
-								
-								<a href="/about" class="static-avatar author-profile-image">
-									<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
-								</a>
-								
-							</div>
-						</div>
-						<span class="reading-time">
-							1
-							min read
-						</span>
-					</footer>
-				</div>
-			</article>
-			
-			<article class="post-card post  no-image ">
-				
-				<div class="post-card-content">
 					<a class="post-card-content-link" title="数组" href="/2018/11/21/数组/">
 						<header class="post-card-header">
 							<span class="post-card-tags">
@@ -575,6 +526,57 @@ int main(void){
 随机访问？因为数组是连续内存空间和一组相同类型，可以使的数据具有随机访问性。
 数组如何实现随机访问性？计算机会给每个内存分配一个地址，计算机通过地址来访问内存的数据，当计算机随机访问数组中的某个元素时:可以通过寻址公式来查找数据:a[i]_address = base_address + i * data_type_size
 低效的“删除”和“插入
+								...
+							</p>
+						</section>
+					</a>
+					<footer class="post-card-meta">
+						<div class="author-list">
+							<div class="author-list-item">
+								<div class="author-name-tooltip">文煊</div>
+								
+								<a href="/about" class="static-avatar author-profile-image">
+									<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><path d="M3.513 18.998C4.749 15.504 8.082 13 12 13s7.251 2.504 8.487 5.998C18.47 21.442 15.417 23 12 23s-6.47-1.558-8.487-4.002zM12 12c2.21 0 4-2.79 4-5s-1.79-4-4-4-4 1.79-4 4 1.79 5 4 5z" fill="#FFF"/></g></svg>
+								</a>
+								
+							</div>
+						</div>
+						<span class="reading-time">
+							1
+							min read
+						</span>
+					</footer>
+				</div>
+			</article>
+			
+			<article class="post-card post  no-image ">
+				
+				<div class="post-card-content">
+					<a class="post-card-content-link" title="java内存分配" href="/2018/11/21/java内存分配/">
+						<header class="post-card-header">
+							<span class="post-card-tags">
+								
+								
+								java基础
+								| 
+								
+								<time datetime="2018-11-21T02:59:36.000Z" itemprop="datePublished">
+									2018-11-21
+								</time>
+							</span>
+							<h2 class="post-card-title">java内存分配</h2>
+						</header>
+						<section class="post-card-excerpt">
+							<p>
+								
+								
+								
+								
+								
+								
+栈区（stack）：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。
+堆区（heap）：一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收。注意它与数据结构中的堆是两回事，链表的数据空间必须采用堆存储分配策略。
+全局区（静态区）（static）：全局变量和静态变量的存储是放在这一块的。初始化的全局变量和静态变量在一块区域，未初始化的全局变量和未初始化的静态变量在相邻的另
 								...
 							</p>
 						</section>
