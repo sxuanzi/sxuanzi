@@ -2,9 +2,12 @@
 title: java内存分配
 date: 2018-11-21 10:59:36
 categories: java基础
-
+cover_img: https://ss0.bdstatic.com/70cFuHSh_Q1YnxGkpoWK1HF6hhy/it/u=3100484132,412547432&fm=26&gp=0.jpg
 
 ---
+
+
+<meta name="referrer" content="no-referre"/>
 
 <!--more-->
 **栈区（stack）**：由编译器自动分配释放，存放函数的参栈区（stack），由编译器自动分配释放，存放函数的参数值，局部变量的值等。其操作方式类似于数据结构中的栈。

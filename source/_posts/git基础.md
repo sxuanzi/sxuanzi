@@ -1,9 +1,14 @@
 ---
 title: git基础
 categories: java基础
-
+cover_img: https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1548248701909&di=4f5a2f1fbb411b973ea12fcc3e0cf4a0&imgtype=0&src=http%3A%2F%2Fimg.mukewang.com%2F5837a38f00015b6905960404.png
+feature_img:  http://www.pptbz.com/pptpic/UploadFiles_6909/201408/2014080414534056.jpg
+description: git的基本配置和git的基本使用和git的版本管控 
+keywords: 设计模式
 
 ---
+<meta name="referrer" content="no-referre"/>
+
 ### 安装github
 <!--more-->
 点击下面的链接可以到达git下载，根据你的安装系统进行安装
